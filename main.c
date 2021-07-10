@@ -2,6 +2,7 @@
 #include<string.h>
 #include<stdio.h>
 #include<time.h>
+
 //linkedlist functions
 struct Student
 {
@@ -162,6 +163,115 @@ int z = (double)(finish-start)/CLOCKS_PER_SEC;
                    printf("The total size of the linked list in memory after insertion %lu\n",num1*sizeof(struct Student));
 
     }
+
+
+  //dynamic array functions
+    int n;
+struct student
+{
+   char name[100];
+   int ID;
+   int birth_year,birth_month,birth_day;
+   int score;
+};
+void lastinsert2(struct student* ptr)
+    {int start=clock();
+
+n++;
+  ptr = (struct student*)realloc(ptr,n*sizeof(struct student) );
+    printf("Enter name :\n");
+    scanf("%s",(ptr + n-1)->name);
+     printf("Enter ID :\n");
+    scanf("%d",&(ptr + n-1)->ID);
+     printf("Enter birth_year:\n");
+    scanf("%d",&(ptr + n-1)->birth_year);
+     printf("Enter birth_month:\n");
+    scanf("%d",&(ptr + n-1)->birth_month);
+     printf("Enter birth_day:\n");
+    scanf("%d",&(ptr + n-1)->birth_day);
+     printf("Enter score:\n");
+    scanf("%d",&(ptr + n-1)->score);
+    int finish=clock();
+int z = (double)(finish-start)/CLOCKS_PER_SEC;
+                  printf("The Excuetion Time is:%f\n",z);
+                   printf("The total size of the dynamic array in memory before insertion%lu\n",(n-1)*sizeof(struct student));
+                   printf("The total size of the dynamic array in memory after insertion %lu\n",n*sizeof(struct student));
+
+
+    }
+ void middelinsert2(struct student* ptr)
+ {
+int start=clock();
+n++;
+  ptr = (struct student*)realloc(ptr,n*sizeof(struct student) );
+    for (int i = n; i >n/2-1; i--)
+        *(ptr+i)=*(ptr+i-1);
+  printf("Enter name :\n");
+    scanf("%s",(ptr+n/2)->name);
+     printf("Enter ID :\n");
+    scanf("%d",&(ptr+n/2)->ID);
+     printf("Enter birth_year:\n");
+    scanf("%d",&(ptr+n/2)->birth_year);
+     printf("Enter birth_month:\n");
+    scanf("%d",&(ptr+n/2)->birth_month);
+     printf("Enter birth_day:\n");
+    scanf("%d",&(ptr+n/2)->birth_day);
+     printf("Enter score:\n");
+    scanf("%d",&(ptr+n/2)->score);
+int finish=clock();
+int z = (double)(finish-start)/CLOCKS_PER_SEC;
+                  printf("The Excuetion Time is:%f\n",z);
+                   printf("The total size of the dynamic array in memory before insertion%lu\n",(n-1)*sizeof(struct student));
+                   printf("The total size of the dynamic array in memory after insertion %lu\n",n*sizeof(struct student));
+
+ }
+ void insert2(struct student* ptr)
+{   int start=clock();
+    n++;
+  ptr = (struct student*)realloc(ptr,n*sizeof(struct student) );
+struct student *q;
+for (int i = n; i >=0; i--)
+*(ptr+i)=*(ptr+i-1);
+  printf("Enter name :\n");
+    scanf("%s",(ptr + 0)->name);
+     printf("Enter ID :\n");
+    scanf("%d",&(ptr + 0)->ID);
+     printf("Enter birth_year:\n");
+    scanf("%d",&(ptr + 0)->birth_year);
+     printf("Enter birth_month:\n");
+    scanf("%d",&(ptr + 0)->birth_month);
+     printf("Enter birth_day:\n");
+    scanf("%d",&(ptr + 0)->birth_day);
+     printf("Enter score:\n");
+    scanf("%d",&(ptr + 0)->score);
+
+int finish=clock();
+int z = (double)(finish-start)/CLOCKS_PER_SEC;
+                  printf("The Excuetion Time is:%f\n",z);
+                   printf("The total size of the dynamic array in memory before insertion%lu\n",(n-1)*sizeof(struct student));
+                   printf("The total size of the dynamic array in memory after insertion %lu\n",n*sizeof(struct student));
+
+}
+void display2(struct student* ptr)
+{
+
+    for (int i = 0; i < n; ++i)
+{
+printf("Name of student :");
+printf("%s\n " ,(ptr + i)->name);
+printf("ID :");
+printf("%d\n " ,(ptr + i)->ID);
+printf("birth_year:");
+printf("%d\n " ,(ptr + i)->birth_year);
+printf("birth_month:");
+printf("%d\n ", (ptr + i)->birth_month);
+printf("birth_day:");
+printf("%d\n " ,(ptr + i)->birth_day);
+printf("score:");
+printf("%d\n\n\n ", (ptr + i)->score);
+}
+}
+
 int main()
 {struct student *ptr;
     head = NULL;
